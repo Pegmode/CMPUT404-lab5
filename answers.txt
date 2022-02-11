@@ -1,0 +1,10 @@
+1.      
+    Advantages:
+        - Easy to set up
+        - 
+    Disadvantages:
+        - Can't server dynamic content
+        - Can be difficult to customize to very specific needs
+
+2.
+    https://pegmode.github.io/cmput404w22-lab5/
