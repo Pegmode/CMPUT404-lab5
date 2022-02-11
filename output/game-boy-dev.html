@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Game Boy Dev</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="Modern Game boy dev is pretty cool. Your choices for development boil down to: - the C compiler Game Boy SDK (GBSDK) - the assembler Rednex Game..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Dchu lab5</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/blog.html">Blog</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/game-boy-dev.html" rel="bookmark"
+           title="Permalink to Game Boy Dev">Game Boy Dev</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-02-10T08:00:00-07:00">
+                Published: Thu 10 February 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/pegmode.html">Pegmode</a>
+        </address>
+<p>In <a href="/category/blog.html">Blog</a>.</p>
+
+</footer><!-- /.post-info -->      <p>Modern Game boy dev is pretty cool. Your choices for development boil down to: 
+- the C compiler <a href="https://github.com/gbdev/rgbds">Game Boy SDK (GBSDK)</a>
+- the assembler <a href="https://github.com/gbdev/rgbds">Rednex Game Boy Development System (RGBDS)</a>
+- <a href="https://github.com/gbdev/rgbds">GB Studio</a>, a drag and drop game creator working on top of GBSDK</p>
+<p>Many people choose GBSDK since they feel that C programming is much easier to work with. For example, the most popular modern GB game engine <a href="https://github.com/Zal0/ZGB">ZGB</a> is built on top of GBSDK. </p>
+<p>For the Game Boy's CPU architecture; the common understanding is that the C compiler general writes code that is as fast as assembly for the most part does not necessarily hold. </p>
+<p>In many cases you can write a relatively small test ROM and do things like track sprites and manipulate the screen by playing music and such. If you run both programs in an emulator that can track CPU time/frame (such as <a href="https://bgb.bircd.org/">BGB</a>) you may notice that the C program is noticeably quite a lot slower. Why is this?</p>
+<p>Among other things, one the greatest sources of the slowdown is C's reliance on the stack for passing function arguements. While there are instructions specifically for manipulating the game boys stack (<code>PUSH/POP</code>) they are very slow. The game boy does not have pipelining or any of the modern speedup methods that modern CPU archetectures use. This means that the <code>PUSH/POP</code> can take many more cycles than say loading a value simply into a work register or loading from a static address. </p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
